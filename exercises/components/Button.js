@@ -15,5 +15,5 @@ Button.propTypes = {
 }
 
 Button.contextTypes = {
-  color: React.PropTypes.string
+  color: React.PropTypes.string,
 }

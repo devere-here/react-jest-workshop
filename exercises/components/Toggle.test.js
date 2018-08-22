@@ -1,3 +1,7 @@
+import React from 'react';
+import { render, mount } from 'enzyme';
+import Toggle from './Toggle';
+
 // you'll need to import react, enzyme's render and mount functions,
 // and ./Toggle
 
@@ -7,6 +11,14 @@ test('has toggle--off class applied by default', () => {
 })
 
 test('has toggle--on class applied when initialToggledOn specified to true', () => {
+  const wrapper = mount(<Toggle
+    initialToggledOn={true}
+    onToggle={() => true}
+    children={[1, 2, 3]}
+                        />)
+
+  expect(wrapper.render().children()[0].attribs.class.includes('toggle--on'))
+
   // use the renderToggle function and call it with {initialToggledOn: true}
   // expect the first child to have the class toggle--on
 })
